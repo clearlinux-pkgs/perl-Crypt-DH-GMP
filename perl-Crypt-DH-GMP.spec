@@ -4,10 +4,10 @@
 #
 Name     : perl-Crypt-DH-GMP
 Version  : 0.00012
-Release  : 8
+Release  : 9
 URL      : https://cpan.metacpan.org/authors/id/D/DM/DMAKI/Crypt-DH-GMP-0.00012.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/D/DM/DMAKI/Crypt-DH-GMP-0.00012.tar.gz
-Summary  : 'Crypt::DH Using GMP Directly'
+Summary  : Crypt::DH Using GMP Directly
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
 Requires: perl-Crypt-DH-GMP-lib = %{version}-%{release}
@@ -25,6 +25,7 @@ Summary: dev components for the perl-Crypt-DH-GMP package.
 Group: Development
 Requires: perl-Crypt-DH-GMP-lib = %{version}-%{release}
 Provides: perl-Crypt-DH-GMP-devel = %{version}-%{release}
+Requires: perl-Crypt-DH-GMP = %{version}-%{release}
 
 %description dev
 dev components for the perl-Crypt-DH-GMP package.
