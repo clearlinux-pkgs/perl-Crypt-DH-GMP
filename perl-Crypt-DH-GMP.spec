@@ -4,13 +4,13 @@
 #
 Name     : perl-Crypt-DH-GMP
 Version  : 0.00012
-Release  : 9
+Release  : 10
 URL      : https://cpan.metacpan.org/authors/id/D/DM/DMAKI/Crypt-DH-GMP-0.00012.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/D/DM/DMAKI/Crypt-DH-GMP-0.00012.tar.gz
-Summary  : Crypt::DH Using GMP Directly
+Summary  : 'Crypt::DH Using GMP Directly'
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
-Requires: perl-Crypt-DH-GMP-lib = %{version}-%{release}
+Requires: perl-Crypt-DH-GMP-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
 BuildRequires : gmp-dev
 BuildRequires : perl(Module::Install)
@@ -23,7 +23,6 @@ No detailed description available
 %package dev
 Summary: dev components for the perl-Crypt-DH-GMP package.
 Group: Development
-Requires: perl-Crypt-DH-GMP-lib = %{version}-%{release}
 Provides: perl-Crypt-DH-GMP-devel = %{version}-%{release}
 Requires: perl-Crypt-DH-GMP = %{version}-%{release}
 
@@ -31,22 +30,24 @@ Requires: perl-Crypt-DH-GMP = %{version}-%{release}
 dev components for the perl-Crypt-DH-GMP package.
 
 
-%package lib
-Summary: lib components for the perl-Crypt-DH-GMP package.
-Group: Libraries
+%package perl
+Summary: perl components for the perl-Crypt-DH-GMP package.
+Group: Default
+Requires: perl-Crypt-DH-GMP = %{version}-%{release}
 
-%description lib
-lib components for the perl-Crypt-DH-GMP package.
+%description perl
+perl components for the perl-Crypt-DH-GMP package.
 
 
 %prep
 %setup -q -n Crypt-DH-GMP-0.00012
+cd %{_builddir}/Crypt-DH-GMP-0.00012
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
+export LANG=C.UTF-8
 if test -f Makefile.PL; then
 %{__perl} Makefile.PL
 make  %{?_smp_mflags}
@@ -56,7 +57,7 @@ else
 fi
 
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
@@ -76,14 +77,14 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/x86_64-linux-thread-multi/Crypt/DH/GMP.pm
-/usr/lib/perl5/vendor_perl/5.28.2/x86_64-linux-thread-multi/Crypt/DH/GMP/Compat.pm
 
 %files dev
 %defattr(-,root,root,-)
 /usr/share/man/man3/Crypt::DH::GMP.3
 /usr/share/man/man3/Crypt::DH::GMP::Compat.3
 
-%files lib
+%files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/x86_64-linux-thread-multi/auto/Crypt/DH/GMP/GMP.so
+/usr/lib/perl5/vendor_perl/5.30.1/x86_64-linux-thread-multi/Crypt/DH/GMP.pm
+/usr/lib/perl5/vendor_perl/5.30.1/x86_64-linux-thread-multi/Crypt/DH/GMP/Compat.pm
+/usr/lib/perl5/vendor_perl/5.30.1/x86_64-linux-thread-multi/auto/Crypt/DH/GMP/GMP.so
