@@ -4,7 +4,7 @@
 #
 Name     : perl-Crypt-DH-GMP
 Version  : 0.00012
-Release  : 18
+Release  : 19
 URL      : https://cpan.metacpan.org/authors/id/D/DM/DMAKI/Crypt-DH-GMP-0.00012.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/D/DM/DMAKI/Crypt-DH-GMP-0.00012.tar.gz
 Summary  : 'Crypt::DH Using GMP Directly'
@@ -85,6 +85,4 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/Crypt/DH/GMP.pm
-/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/Crypt/DH/GMP/Compat.pm
-/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/auto/Crypt/DH/GMP/GMP.so
+/usr/lib/perl5/*
