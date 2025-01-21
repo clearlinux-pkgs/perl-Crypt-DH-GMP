@@ -4,7 +4,7 @@
 #
 Name     : perl-Crypt-DH-GMP
 Version  : 0.00012
-Release  : 23
+Release  : 24
 URL      : https://cpan.metacpan.org/authors/id/D/DM/DMAKI/Crypt-DH-GMP-0.00012.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/D/DM/DMAKI/Crypt-DH-GMP-0.00012.tar.gz
 Summary  : 'Crypt::DH Using GMP Directly'
